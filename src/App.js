@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Employee from './pages/Employee'
 import EmployeeAdd from './pages/EmployeeAdd'
+import Country from './pages/Country'
 
 const App = () => {
   return (
@@ -14,6 +15,8 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/employee" element={<Employee />} />
         <Route path="/employee-add" element={<EmployeeAdd />} />
+        <Route path="/country" element={<Country />} />
+        
       </Routes>
     </BrowserRouter>
   )
