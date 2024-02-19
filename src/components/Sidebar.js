@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux';
 import { selectSidebarState, toggleSidebar } from '../redux/sidebarSlice';
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
+
 
 const Sidebar = () => {
     const [isCompact, setIsCompact] = useState(false);
@@ -33,59 +36,160 @@ const Sidebar = () => {
             </div>
             <div className="nk-sidebar-element nk-sidebar-body">
                 <div className="nk-sidebar-content">
-                    <div className="nk-sidebar-menu" data-simplebar>
-                        <ul className="nk-menu">
-                            <li className="nk-menu-item">
-                                <Link to="/dashboard" className="nk-menu-link">
-                                    <span className="nk-menu-icon"><em className="icon ni ni-dashboard-fill"></em></span>
-                                    <span className="nk-menu-text">Dashboard</span>
-                                </Link>
-                            </li>
-                            <li className={`nk-menu-item ${activeSubMenu === 1 ? 'active' : ''} has-sub`}>
-                                <a href="#" className="nk-menu-link nk-menu-toggle" onClick={() => toggleSubMenu(1)}>
-                                    <span className="nk-menu-icon"><em className="icon ni ni-users-fill"></em></span>
-                                    <span className="nk-menu-text">Admin</span>
-                                </a>
-                                <ul className="nk-menu-sub">
-                                    <li className="nk-menu-item">
-                                        <a href="#" className="nk-menu-link"><span className="nk-menu-text">User Admin</span></a>
-                                    </li>
-                                    <li className="nk-menu-item">
-                                        <a href="#" className="nk-menu-link"><span className="nk-menu-text">Menu Master</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li className={`nk-menu-item ${activeSubMenu === 2 ? 'active' : ''} has-sub`}>
-                                <a href="#" className="nk-menu-link nk-menu-toggle" onClick={() => toggleSubMenu(2)}>
-                                    <span className="nk-menu-icon"><em className="icon ni ni-layers-fill"></em></span>
-                                    <span className="nk-menu-text">Master</span>
-                                </a>
-                                <ul className="nk-menu-sub">
-                                    <li className="nk-menu-item">
-                                        <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Employee</span></Link>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li className="nk-menu-item">
+                    <SimpleBar style={{ maxHeight: '100%', color: 'white' }}>
+                        <div className="nk-sidebar-menu" data-simplebar>
+                            <ul className="nk-menu">
+                                <li className="nk-menu-item">
+                                    <Link to="/dashboard" className="nk-menu-link">
+                                        <span className="nk-menu-icon"><em className="icon ni ni-dashboard-fill"></em></span>
+                                        <span className="nk-menu-text">Dashboard</span>
+                                    </Link>
+                                </li>
+                                <li className={`nk-menu-item ${activeSubMenu === 1 ? 'active' : ''} has-sub`}>
+                                    <a href="#" className="nk-menu-link nk-menu-toggle" onClick={() => toggleSubMenu(1)}>
+                                        <span className="nk-menu-icon"><em className="icon ni ni-users-fill"></em></span>
+                                        <span className="nk-menu-text">Admin</span>
+                                    </a>
+                                    <ul className="nk-menu-sub">
+                                        <li className="nk-menu-item">
+                                            <a href="#" className="nk-menu-link"><span className="nk-menu-text">User Admin</span></a>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <a href="#" className="nk-menu-link"><span className="nk-menu-text">Menu Master</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li className={`nk-menu-item ${activeSubMenu === 2 ? 'active' : ''} has-sub`}>
+                                    <a href="#" className="nk-menu-link nk-menu-toggle" onClick={() => toggleSubMenu(2)}>
+                                        <span className="nk-menu-icon"><em className="icon ni ni-layers-fill"></em></span>
+                                        <span className="nk-menu-text">Master</span>
+                                    </a>
+                                    <ul className="nk-menu-sub">
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Employee</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">EmployeeStatus</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Location</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Department</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Designation</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Section</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Grade</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/country" className="nk-menu-link"><span className="nk-menu-text">Country</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">State</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Cost Center</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Sub Contract</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Bank</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Branch</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Leave Master</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Blood Group Master</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text"></span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Freeze Transaction(Travel Expense) </span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Financial Year</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Bus</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Holiday(Compulsory)</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Holiday Mapping</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Shoes</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Uniform</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Medical Insurance Details</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Shift</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Employee Category</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Leave Combination</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">OT Rule</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">OT Slab</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Roles</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Upload Multiple Photo</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Resign Type Master</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Salary Component</span></Link>
+                                        </li>
+                                        <li className="nk-menu-item">
+                                            <Link to="/employee" className="nk-menu-link"><span className="nk-menu-text">Salary Component Details</span></Link>
+                                        </li>
+                                    </ul>
+                                </li>
+                                {/* <li className="nk-menu-item">
                                 <a href="#" className="nk-menu-link">
                                     <span className="nk-menu-icon"><em className="icon ni ni-user-list-fill"></em></span>
                                     <span className="nk-menu-text">User Role</span>
                                 </a>
-                            </li>
-                            <li className="nk-menu-item">
-                                <a href="#" className="nk-menu-link">
-                                    <span className="nk-menu-icon"><em className="icon ni ni-calendar-check-fill"></em></span>
-                                    <span className="nk-menu-text">Attendance</span>
-                                </a>
-                            </li>
-                            <li className="nk-menu-item">
-                                <a href="#" className="nk-menu-link">
-                                    <span className="nk-menu-icon"><em className="icon ni ni-notice"></em></span>
-                                    <span className="nk-menu-text">Leave</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                            </li> */}
+                                <li className="nk-menu-item">
+                                    <a href="#" className="nk-menu-link">
+                                        <span className="nk-menu-icon"><em className="icon ni ni-calendar-check-fill"></em></span>
+                                        <span className="nk-menu-text">Attendance</span>
+                                    </a>
+                                </li>
+                                <li className="nk-menu-item">
+                                    <a href="#" className="nk-menu-link">
+                                        <span className="nk-menu-icon"><em className="icon ni ni-notice"></em></span>
+                                        <span className="nk-menu-text">Leave</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </SimpleBar>
                 </div>
             </div>
         </div>

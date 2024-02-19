@@ -42,7 +42,7 @@ const Employee = () => {
                                                                 <div className="input-group">
                                                                     <input type="text" className="form-control" placeholder="Enter Employee Code" />
                                                                     <div className="input-group-append">
-                                                                        <button className="btn btn-outline-primary btn-dim">Employee Code</button>
+                                                                        <button className="btn btn-outline-primary btn-dim">Search</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -82,6 +82,7 @@ const Employee = () => {
                                                             </div>
                                                         </div>
                                                         {isActive('View All') && <div className="col-12 mt-4">
+
                                                             <div className='table-responsive'>
                                                                 <table className='table table-bordered'>
                                                                     <thead>
