@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux';
 import { selectSidebarState, toggleSidebar } from '../redux/sidebarSlice';
-import logo from '../assets/img/logo.jpg'
 
 const Sidebar = () => {
     const [isCompact, setIsCompact] = useState(false);
@@ -31,12 +30,6 @@ const Sidebar = () => {
                     <a href="#" className="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu" onClick={handleToggleSidebar}><em className="icon ni ni-arrow-left"></em></a>
                     <a href="#" className={`nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex ${isCompact ? 'compact-active' : ''}`} data-target="sidebarMenu" onClick={toggleCompact}><em className="icon ni ni-menu"></em></a>
                 </div>
-                <div className="nk-sidebar-brand">
-                    <Link to="/dashboard" className="logo-link nk-sidebar-logo">
-                        <img className="logo-light logo-img" src={logo} srcset="./images/logo2x.png 2x" alt="logo" />
-                        <img className="logo-dark logo-img" src={logo} srcset="./images/logo-dark2x.png 2x" alt="logo-dark" />
-                    </Link>
-                </div>
             </div>
             <div className="nk-sidebar-element nk-sidebar-body">
                 <div className="nk-sidebar-content">
@@ -50,7 +43,7 @@ const Sidebar = () => {
                             </li>
                             <li className={`nk-menu-item ${activeSubMenu === 1 ? 'active' : ''} has-sub`}>
                                 <a href="#" className="nk-menu-link nk-menu-toggle" onClick={() => toggleSubMenu(1)}>
-                                    <span className="nk-menu-icon"><em className="icon ni ni-layers-fill"></em></span>
+                                    <span className="nk-menu-icon"><em className="icon ni ni-users-fill"></em></span>
                                     <span className="nk-menu-text">Admin</span>
                                 </a>
                                 <ul className="nk-menu-sub">

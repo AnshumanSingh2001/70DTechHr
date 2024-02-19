@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar.js'
 import Header from '../components/Header.js'
 import Tab from 'react-bootstrap/Tab';
@@ -5,6 +6,32 @@ import Tabs from 'react-bootstrap/Tabs';
 import { Link } from 'react-router-dom';
 
 const EmployeeAdd = () => {
+    const [prefix, setPrefix] = useState('');
+    const [gender, setGender] = useState('');
+
+    const handlePrefixChange = (e) => {
+        const selectedPrefix = e.target.value;
+        setPrefix(selectedPrefix);
+        if (selectedPrefix === 'Mr') {
+            setGender('Male');
+        } else if (selectedPrefix === 'Mrs') {
+            setGender('Female');
+        } else {
+            setGender('');
+        }
+    };
+
+    const handleGenderChange = (e) => {
+        const selectedGender = e.target.value;
+        setGender(selectedGender);
+        if (selectedGender === 'Male') {
+            setPrefix('Mr');
+        } else if (selectedGender === 'Female') {
+            setPrefix('Mrs');
+        } else {
+            setPrefix('');
+        }
+    };
     return (
         <main className="nk-body bg-lighter npc-general has-sidebar">
             <div className="nk-app-root">
@@ -45,10 +72,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="company-name">Company Name</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -56,10 +85,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="location-name">Location Name</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -67,10 +98,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="department-name">Department Name</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -78,10 +111,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="cost-center-name">Cost Center Name</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -89,7 +124,7 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="emp-code">Employee Code</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <input type="text" className="form-control" id="emp-code" placeholder="Employee Code" />
+                                                                                    <input type="text" className="form-control" id="emp-code" placeholder="Employee Code" readOnly />
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -97,23 +132,28 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="emp-status">Employee Status</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <div className="col-12">
                                                                             <div className="form-group">
-                                                                                <label className="form-label" for="emp-name">Employee Name</label>
+                                                                                <label className="form-label" htmlFor="emp-name">Employee Name</label>
                                                                                 <div className="form-control-wrap d-flex">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
-                                                                                    <input type="text" className="form-control" id="emp-name" placeholder="First Name" />
-                                                                                    <input type="text" className="form-control" id="emp-name" placeholder="Middle Name" />
+                                                                                    <div className="form-control-select me-2 w-50">
+                                                                                        <select className="form-control" value={prefix} onChange={handlePrefixChange}>
+                                                                                            <option>Select</option>
+                                                                                            <option value={'Mr'}>Mr</option>
+                                                                                            <option value={'Mrs'}>Mrs</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                    <input type="text" className="form-control me-2" id="emp-name" placeholder="First Name" />
+                                                                                    <input type="text" className="form-control me-2" id="emp-name" placeholder="Middle Name" />
                                                                                     <input type="text" className="form-control" id="emp-name" placeholder="Last Name" />
                                                                                 </div>
                                                                             </div>
@@ -122,10 +162,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="designation-name">Designation Name</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -133,24 +175,26 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="designation-name">Blood Group</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <div className="col-sm-6">
                                                                             <div className="form-group">
-                                                                                <label className="form-label" for="designation-name">Gender</label>
+                                                                                <label className="form-label" htmlFor="designation-name">Gender</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <div class="custom-control custom-radio me-2">
-                                                                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" />
-                                                                                        <label class="custom-control-label" for="customRadio1">Male</label>
+                                                                                    <div className="custom-control custom-radio me-2">
+                                                                                        <input type="radio" id="customRadio1" name="customRadio" className="custom-control-input" value="Male" checked={gender === 'Male'} onChange={handleGenderChange} />
+                                                                                        <label className="custom-control-label" htmlFor="customRadio1">Male</label>
                                                                                     </div>
-                                                                                    <div class="custom-control custom-radio">
-                                                                                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" />
-                                                                                        <label class="custom-control-label" for="customRadio2">Female</label>
+                                                                                    <div className="custom-control custom-radio">
+                                                                                        <input type="radio" id="customRadio2" name="customRadio" className="custom-control-input" value="Female" checked={gender === 'Female'} onChange={handleGenderChange} />
+                                                                                        <label className="custom-control-label" htmlFor="customRadio2">Female</label>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -159,10 +203,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="designation-name">Section Name</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -194,10 +240,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="designation-name">Country Name</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -205,10 +253,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="designation-name">State Name</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -268,10 +318,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="company-name">Grade</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -287,10 +339,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="department-name">Category</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -306,10 +360,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="cost-center-name">Rate Code</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -317,10 +373,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="cost-center-name">Sub Contractor</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -328,10 +386,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="cost-center-name">Bank Name</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -339,10 +399,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="cost-center-name">Branch Name</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -453,10 +515,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="designation-name">Weekly Off</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -464,10 +528,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="designation-name">Reporting to</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -475,10 +541,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="designation-name">Uniform</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -486,10 +554,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="designation-name">Shoe</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -497,10 +567,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="designation-name">Bus</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -508,10 +580,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="designation-name">Pick Up Point</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Select</option>
-                                                                                        <option>Option 1</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Select</option>
+                                                                                            <option>Option 1</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -543,10 +617,12 @@ const EmployeeAdd = () => {
                                                                             <div className="form-group">
                                                                                 <label className="form-label" for="designation-name">Technical/Non-Technical</label>
                                                                                 <div className="form-control-wrap">
-                                                                                    <select className="form-control">
-                                                                                        <option>Technical</option>
-                                                                                        <option>Non-Technical</option>
-                                                                                    </select>
+                                                                                    <div className="form-control-select">
+                                                                                        <select className="form-control">
+                                                                                            <option>Technical</option>
+                                                                                            <option>Non-Technical</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>

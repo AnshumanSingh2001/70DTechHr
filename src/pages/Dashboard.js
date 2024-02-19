@@ -25,7 +25,61 @@ const Dashboard = () => {
                                         </div>
                                         <div className="nk-block">
                                             <div className="row g-gs">
-                                                <div className="col-sm-6 col-lg-6 col-xxl-6">
+                                                <div class="col-md-4">
+                                                    <div class="card card-bordered card-full">
+                                                        <div class="card-inner">
+                                                            <div class="card-title-group align-start mb-0">
+                                                                <div class="card-title">
+                                                                    <h6 class="subtitle">Total Employee</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-amount">
+                                                                <span class="amount"> 0
+                                                                </span>
+                                                            </div>
+                                                            <div class="invest-data">
+                                                                <div class="invest-data-amount g-2">
+                                                                    <div class="invest-data-history">
+                                                                        <div class="title">This Month</div>
+                                                                        <div class="amount">0</div>
+                                                                    </div>
+                                                                    <div class="invest-data-history">
+                                                                        <div class="title">This Week</div>
+                                                                        <div class="amount">0</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="card card-bordered card-full">
+                                                        <div class="card-inner">
+                                                            <div class="card-title-group align-start mb-0">
+                                                                <div class="card-title">
+                                                                    <h6 class="subtitle">Total Leave Request</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-amount">
+                                                                <span class="amount"> 0
+                                                                </span>
+                                                            </div>
+                                                            <div class="invest-data">
+                                                                <div class="invest-data-amount g-2">
+                                                                    <div class="invest-data-history">
+                                                                        <div class="title">This Month</div>
+                                                                        <div class="amount">0</div>
+                                                                    </div>
+                                                                    <div class="invest-data-history">
+                                                                        <div class="title">This Week</div>
+                                                                        <div class="amount">0</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {/* <div className="col-sm-6 col-lg-6 col-xxl-6">
                                                     <div className="card card-bordered">
                                                         <div className="card-inner">
                                                             <div className="card-title-group align-start mb-2 justify-content-center">
@@ -56,7 +110,7 @@ const Dashboard = () => {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                     </div>

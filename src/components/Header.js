@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toggleSidebar } from '../redux/sidebarSlice';
 
 const Header = () => {
+    const [toggleProfile, setToggleProfile] = useState(false);
+    const [toggleNoti, setToggleNoti] = useState(false);
     const dispatch = useDispatch();
 
     const handleToggleSidebar = () => {
@@ -16,7 +18,7 @@ const Header = () => {
                         <a href="#" className="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu" onClick={handleToggleSidebar}><em className="icon ni ni-menu"></em></a>
                     </div>
                     <div className="nk-header-brand d-xl-none">
-                        <a href="html/index.html" className="logo-link">
+                        <a href="#" className="logo-link">
                             <img className="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo" />
                             <img className="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark" />
                         </a>
@@ -24,7 +26,7 @@ const Header = () => {
                     <div className="nk-header-tools">
                         <ul className="nk-quick-nav">
                             <li className="dropdown user-dropdown">
-                                <a href="#" className="dropdown-toggle" data-bs-toggle="dropdown">
+                                <a href="#" className={`dropdown-toggle ${toggleProfile ? 'show' : ''}`} data-bs-toggle="dropdown" onClick={() => setToggleProfile(!toggleProfile)}>
                                     <div className="user-toggle">
                                         <div className="user-avatar sm">
                                             <em className="icon ni ni-user-alt"></em>
@@ -35,24 +37,23 @@ const Header = () => {
                                         </div>
                                     </div>
                                 </a>
-                                <div className="dropdown-menu dropdown-menu-md dropdown-menu-end dropdown-menu-s1">
+                                <div className={`dropdown-menu dropdown-menu-md dropdown-menu-end dropdown-menu-s1 ${toggleProfile ? 'show' : ''}`} style={toggleProfile ? { position: 'absolute', inset: '0px 0px auto auto', margin: '0px', transform: 'translate3d(-9.6px, 38.4px, 0px)' } : {}}>
                                     <div className="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
                                         <div className="user-card">
                                             <div className="user-avatar">
-                                                <span>AB</span>
+                                                <span>A</span>
                                             </div>
                                             <div className="user-info">
-                                                <span className="lead-text">Abu Bin Ishtiyak</span>
-                                                <span className="sub-text">info@softnio.com</span>
+                                                <span className="lead-text">Admin</span>
+                                                <span className="sub-text">Admin@.com</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="dropdown-inner">
                                         <ul className="link-list">
-                                            <li><a href="html/user-profile-regular.html"><em className="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                            <li><a href="html/user-profile-setting.html"><em className="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                                            <li><a href="html/user-profile-activity.html"><em className="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
-                                            <li><a className="dark-switch" href="#"><em className="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
+                                            <li><a href="#"><em className="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
+                                            <li><a href="#"><em className="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
+                                            <li><a href="#"><em className="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
                                         </ul>
                                     </div>
                                     <div className="dropdown-inner">
@@ -63,10 +64,10 @@ const Header = () => {
                                 </div>
                             </li>
                             <li className="dropdown notification-dropdown me-n1">
-                                <a href="#" className="dropdown-toggle nk-quick-nav-icon" data-bs-toggle="dropdown">
+                                <a href="#" className={`dropdown-toggle nk-quick-nav-icon ${toggleNoti ? 'show' : ''}`} data-bs-toggle="dropdown" onClick={() => setToggleNoti(!toggleNoti)}>
                                     <div className="icon-status icon-status-info"><em className="icon ni ni-bell"></em></div>
                                 </a>
-                                <div className="dropdown-menu dropdown-menu-xl dropdown-menu-end dropdown-menu-s1">
+                                <div className={`dropdown-menu dropdown-menu-xl dropdown-menu-end dropdown-menu-s1 ${toggleNoti ? 'show' : ''}`} style={toggleNoti ? { position: 'absolute', inset: '0px 0px auto auto', margin: '0px', transform: 'translate3d(-9.6px, 38.4px, 0px)' } : {}}>
                                     <div className="dropdown-head">
                                         <span className="sub-title nk-dropdown-title">Notifications</span>
                                         <a href="#">Mark All as Read</a>
