@@ -37,10 +37,10 @@ const Login = () => {
                                         <form>
                                             <div className="form-group">
                                                 <div className="form-label-group">
-                                                    <label className="form-label" for="default-01">Employee Code</label>
+                                                    <label className="form-label" for="default-01">Username</label>
                                                 </div>
                                                 <div className="form-control-wrap">
-                                                    <input type="text" className="form-control form-control-lg" id="default-01" placeholder="Enter your code" />
+                                                    <input type="text" className="form-control form-control-lg" id="default-01" placeholder="Enter your username" />
                                                 </div>
                                             </div>
                                             <div className="form-group">

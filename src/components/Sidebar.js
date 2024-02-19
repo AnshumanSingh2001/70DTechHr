@@ -73,7 +73,7 @@ const Sidebar = () => {
                                     </li>
                                 </ul>
                             </li>
-                            {/* <li className="nk-menu-item">
+                            <li className="nk-menu-item">
                                 <a href="#" className="nk-menu-link">
                                     <span className="nk-menu-icon"><em className="icon ni ni-user-list-fill"></em></span>
                                     <span className="nk-menu-text">User Role</span>
@@ -90,7 +90,7 @@ const Sidebar = () => {
                                     <span className="nk-menu-icon"><em className="icon ni ni-notice"></em></span>
                                     <span className="nk-menu-text">Leave</span>
                                 </a>
-                            </li> */}
+                            </li>
                         </ul>
                     </div>
                 </div>

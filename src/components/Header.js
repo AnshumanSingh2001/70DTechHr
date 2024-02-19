@@ -23,41 +23,6 @@ const Header = () => {
                     </div>
                     <div className="nk-header-tools">
                         <ul className="nk-quick-nav">
-                            <li className="dropdown language-dropdown d-none d-sm-block me-n1">
-                                <a href="#" className="dropdown-toggle nk-quick-nav-icon" data-bs-toggle="dropdown">
-                                    <div className="quick-icon border border-light">
-                                        <img className="icon" src="./images/flags/english-sq.png" alt="" />
-                                    </div>
-                                </a>
-                                <div className="dropdown-menu dropdown-menu-end dropdown-menu-s1">
-                                    <ul className="language-list">
-                                        <li>
-                                            <a href="#" className="language-item">
-                                                <img src="./images/flags/english.png" alt="" className="language-flag" />
-                                                <span className="language-name">English</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="language-item">
-                                                <img src="./images/flags/spanish.png" alt="" className="language-flag" />
-                                                <span className="language-name">Español</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="language-item">
-                                                <img src="./images/flags/french.png" alt="" className="language-flag" />
-                                                <span className="language-name">Français</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="language-item">
-                                                <img src="./images/flags/turkey.png" alt="" className="language-flag" />
-                                                <span className="language-name">Türkçe</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
                             <li className="dropdown user-dropdown">
                                 <a href="#" className="dropdown-toggle" data-bs-toggle="dropdown">
                                     <div className="user-toggle">
@@ -65,8 +30,8 @@ const Header = () => {
                                             <em className="icon ni ni-user-alt"></em>
                                         </div>
                                         <div className="user-info d-none d-md-block">
-                                            <div className="user-status">Administrator</div>
-                                            <div className="user-name dropdown-indicator">Abu Bin Ishityak</div>
+                                            <div className="user-status">Welcome</div>
+                                            <div className="user-name dropdown-indicator">Admin</div>
                                         </div>
                                     </div>
                                 </a>
